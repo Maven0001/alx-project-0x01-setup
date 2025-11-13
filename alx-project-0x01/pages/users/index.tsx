@@ -58,6 +58,36 @@ const Users: React.FC<UserProps[]> = ({ users }) => {
                 />
               )
             )}
+            ///////////
+            {posts.map(
+              (
+                {
+                  name,
+                  username,
+                  email,
+                  phone,
+                  company,
+                  website,
+                  address,
+                  geo,
+                  id,
+                }: UserProps,
+                key: number
+              ) => (
+                <UserCard
+                  name={name}
+                  username={username}
+                  email={email}
+                  phone={phone}
+                  company={company}
+                  website={website}
+                  address={address}
+                  geo={geo}
+                  id={id}
+                  key={key}
+                />
+              )
+            )}
           </div>
         </main>
         <Footer />
