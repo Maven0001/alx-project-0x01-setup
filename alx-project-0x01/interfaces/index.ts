@@ -1,34 +1,43 @@
+export interface Post {
+  post: Post;
+}
+
 export interface PostProps {
   userId: number;
   id: number;
   title: string;
   body: string;
-  posts: string;
+}
+
+export interface GeoProps {
+  lat: string;
+  lng: string;
+}
+
+export interface AddressProps {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+  geo: GeoProps;
+}
+
+export interface CompanyProps {
+  name: string;
+  catchPhrase: string;
+  bs: string;
 }
 
 export interface UserProps {
-  title: string;
-  id: 1;
-  name: "Leanne Graham";
-  username: "Bret";
-  email: "Sincere@april.biz";
-  address: {
-    street: "Kulas Light";
-    suite: "Apt. 556";
-    city: "Gwenborough";
-    zipcode: "92998-3874";
-    geo: {
-      lat: "-37.3159";
-      lng: "81.1496";
-    };
-  };
-  phone: "1-770-736-8031 x56442";
-  website: "hildegard.org";
-  company: {
-    name: "Romaguera-Crona";
-    catchPhrase: "Multi-layered client-server neural-net";
-    bs: "harness real-time e-markets";
-  };
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: AddressProps;
+  geo: GeoProps;
+  phone: string;
+  website: string;
+  company: CompanyProps;
 }
 
 export interface PostData {
@@ -44,30 +53,14 @@ export interface PostModalProps {
 }
 
 export interface UserData {
-  id: 1;
-  name: "Leanne Graham";
-  username: "Bret";
-  email: "Sincere@april.biz";
-  address: {
-    street: "Kulas Light";
-    suite: "Apt. 556";
-    city: "Gwenborough";
-    zipcode: "92998-3874";
-    geo: {
-      lat: "-37.3159";
-      lng: "81.1496";
-    };
-  };
-  phone: "1-770-736-8031 x56442";
-  website: "hildegard.org";
-  company: {
-    name: "Romaguera-Crona";
-    catchPhrase: "Multi-layered client-server neural-net";
-    bs: "harness real-time e-markets";
-  };
+  name: string;
+  username: string;
+  email: string;
+  phone: string;
+  website: string;
 }
 
 export interface UserModalProps {
   onClose: () => void;
-  onSubmit: (post: UserData) => void;
+  onSubmit: (post: UserProps) => void;
 }
